@@ -1,23 +1,31 @@
-name: blog deploy
+name: Deploy GitHub Pages
 
-on: 
+# 触发条件：在 push 到 master 分支后
+on:
   push:
-    branches: 
+    branches:
       - master
 
+# 任务
 jobs:
-  build-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout
-    - run: npm ci
-    - run: npm install vuepress
-    - run: npm run build
-    
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2.5.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{secrets.key}}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: docs/.vuepress/dist
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: install
+        run: yarn install 
+
+      - name: Build
+        run:  yarn build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: qilingzhao/qilingzhao
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
