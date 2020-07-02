@@ -18,6 +18,8 @@ jobs:
 
       - name: install
         run: yarn global add vuepress 
+      - name: install_plugins
+        run: yarn add vuepress-plugin-auto-sidebar
 
       - name: Build
         run:  yarn build
