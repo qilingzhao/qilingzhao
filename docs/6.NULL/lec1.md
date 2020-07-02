@@ -1,4 +1,14 @@
 ---
 title:Course overview + the shell
 ---
-hello lec1
+##Shell
+```shell
+cd - # will cd to the directory you were perviously in
+>> # redirect STDOUT with append
+| # take output of the program to the left and make input of the program to the right
+```
+## Permission
+First, the d at the beginning of the line tells us that missing is a directory. Then follow three groups of three characters (rwx). These indicate what permissions the owner of the file (missing), the owning group (users), and everyone else respectively have on the relevant item.
+
+## Quote
+https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html#Double-Quotes
