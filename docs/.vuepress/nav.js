@@ -1,1 +1,1 @@
-module.exports = [{"text":"MOOC_Notes","items":[{"text":"MOOC_Notes","link":"/MOOC_Notes/"}]}];
+module.exports = [{"text":"Golang","items":[{"text":"Golang","link":"/Golang/"}]},{"text":"Mooc","items":[{"text":"Mooc","link":"/Mooc/"}]}];
